@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Sinalis Brand Colors - Medical Blue Theme */
+    --background: 200 20% 98%;
+    --foreground: 210 40% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 15%;
+
+    /* Primary - Sinalis Cyan Blue matching logo */
+    --primary: 195 75% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Primary variants for gradients */
+    --primary-light: 195 80% 70%;
+    --primary-dark: 195 70% 45%;
+
+    /* Secondary - Warm soft tones */
+    --secondary: 200 25% 94%;
+    --secondary-foreground: 210 40% 20%;
+
+    --muted: 200 20% 92%;
+    --muted-foreground: 210 15% 45%;
+
+    /* Accent - Soft teal */
+    --accent: 180 45% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 195 75% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom Sinalis tokens */
+    --sinalis-cyan: 195 75% 60%;
+    --sinalis-teal: 180 45% 55%;
+    --sinalis-sky: 200 80% 85%;
+    --sinalis-cream: 40 30% 97%;
+    --sinalis-warm: 30 40% 95%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(195 80% 70% / 0.15), hsl(180 45% 55% / 0.1));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(200 25% 98%));
+    --gradient-primary: linear-gradient(135deg, hsl(195 75% 60%), hsl(180 50% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(195 80% 65%), hsl(200 75% 55%));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(195 75% 60% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(210 40% 15% / 0.08);
+    --shadow-glow: 0 0 40px hsl(195 75% 60% / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 40% 8%;
+    --foreground: 200 20% 95%;
+
+    --card: 210 35% 12%;
+    --card-foreground: 200 20% 95%;
+
+    --popover: 210 35% 12%;
+    --popover-foreground: 200 20% 95%;
+
+    --primary: 195 75% 55%;
+    --primary-foreground: 210 40% 8%;
+    
+    --primary-light: 195 80% 65%;
+    --primary-dark: 195 70% 40%;
+
+    --secondary: 210 30% 18%;
+    --secondary-foreground: 200 20% 90%;
+
+    --muted: 210 30% 20%;
+    --muted-foreground: 200 15% 60%;
+
+    --accent: 180 45% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 22%;
+    --input: 210 30% 22%;
+    --ring: 195 75% 55%;
+    
+    --sinalis-cyan: 195 75% 55%;
+    --sinalis-teal: 180 45% 50%;
+    --sinalis-sky: 200 60% 35%;
+    --sinalis-cream: 210 30% 15%;
+    --sinalis-warm: 210 25% 12%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(195 75% 55% / 0.1), hsl(180 45% 50% / 0.08));
+    --gradient-card: linear-gradient(180deg, hsl(210 35% 14%), hsl(210 35% 10%));
+    --gradient-primary: linear-gradient(135deg, hsl(195 75% 55%), hsl(180 50% 45%));
+    
+    --shadow-soft: 0 4px 20px -4px hsl(195 75% 55% / 0.2);
+    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(195 75% 55% / 0.15);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  .card-elevated {
+    @apply bg-card rounded-2xl;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulseSoft 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
