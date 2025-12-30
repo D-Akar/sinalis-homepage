@@ -2,27 +2,31 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Heart, Shield, Users, Target, Lightbulb, Handshake } from "lucide-react";
+import AchimImage from "@/assets/Achim.jpeg";
+import DerinImage from "@/assets/Derin.jpeg";
+import PaulImage from "@/assets/Paul.jpeg";
+import SamirImage from "@/assets/Samir.jpeg";
 
 const founders = [
   {
-    name: "Gründer 1",
+    name: "Achim Aziz",
     role: "CEO & Co-Founder",
-    image: null,
+    image: AchimImage,
   },
   {
-    name: "Gründer 2", 
+    name: "Derin Akar", 
     role: "CTO & Co-Founder",
-    image: null,
+    image: DerinImage,
   },
   {
-    name: "Gründer 3",
-    role: "COO & Co-Founder",
-    image: null,
-  },
-  {
-    name: "Gründer 4",
+    name: "Paul Sachse",
     role: "CPO & Co-Founder",
-    image: null,
+    image: PaulImage,
+  },
+  {
+    name: "Samir Jusufi",
+    role: "CRO & Co-Founder",
+    image: SamirImage,
   },
 ];
 

@@ -97,7 +97,7 @@ export default function AGB() {
 
             <div className="pt-8 border-t border-border">
               <p className="text-sm">
-                Stand: Dezember 2024
+                Stand: 30. Dezember 2025
               </p>
             </div>
           </div>

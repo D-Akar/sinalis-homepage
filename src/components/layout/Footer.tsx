@@ -16,7 +16,6 @@ const footerLinks = {
   legal: [
     { name: "Datenschutz", href: "/datenschutz" },
     { name: "Impressum", href: "/impressum" },
-    { name: "AGB", href: "/agb" },
   ],
 };
 
@@ -122,7 +121,7 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/sinalis/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
