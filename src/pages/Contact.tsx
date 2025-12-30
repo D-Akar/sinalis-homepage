@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -6,41 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Building2, MessageSquare, ExternalLink } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Nachricht gesendet!",
-      description: "Wir melden uns so schnell wie möglich bei Ihnen.",
-    });
-    
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setIsSubmitting(false);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    // Form is disabled - email is the contact method
   };
 
   return (
@@ -80,8 +49,7 @@ export default function Contact() {
                   Kontaktieren Sie uns
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Wählen Sie den für Sie passenden Weg – wir freuen uns auf 
-                  Ihre Nachricht.
+                  Schreiben Sie uns eine E-Mail – wir freuen uns auf Ihre Nachricht.
                 </p>
                 
                 <a
@@ -107,7 +75,7 @@ export default function Contact() {
                       <p className="text-sm text-muted-foreground">
                         Sie interessieren sich für Sinalis oder möchten eine 
                         individuelle Demo vereinbaren? Kontaktieren Sie uns direkt 
-                        über das Formular oder per E-Mail.
+                        per E-Mail.
                       </p>
                     </div>
                   </div>
@@ -132,7 +100,7 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Right Column - Form */}
+            {/* Right Column - Form (Disabled) */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -140,13 +108,13 @@ export default function Contact() {
             >
               <form
                 onSubmit={handleSubmit}
-                className="p-8 rounded-2xl bg-card border border-border shadow-lg"
+                className="p-8 rounded-2xl bg-card border border-border shadow-lg opacity-50 pointer-events-none"
               >
                 <div className="space-y-6">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-foreground mb-2"
+                      className="block text-sm font-medium text-muted-foreground mb-2"
                     >
                       Vollständiger Name *
                     </label>
@@ -154,9 +122,7 @@ export default function Contact() {
                       id="name"
                       name="name"
                       type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
+                      disabled
                       placeholder="Max Mustermann"
                       className="w-full"
                     />
@@ -165,7 +131,7 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-foreground mb-2"
+                      className="block text-sm font-medium text-muted-foreground mb-2"
                     >
                       E-Mail-Adresse *
                     </label>
@@ -173,9 +139,7 @@ export default function Contact() {
                       id="email"
                       name="email"
                       type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
+                      disabled
                       placeholder="max@praxis.de"
                       className="w-full"
                     />
@@ -184,7 +148,7 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-foreground mb-2"
+                      className="block text-sm font-medium text-muted-foreground mb-2"
                     >
                       Handynummer *
                       <span className="text-muted-foreground font-normal ml-1">
@@ -195,9 +159,7 @@ export default function Contact() {
                       id="phone"
                       name="phone"
                       type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
+                      disabled
                       placeholder="+49 170 123 4567"
                       className="w-full"
                     />
@@ -206,16 +168,14 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-foreground mb-2"
+                      className="block text-sm font-medium text-muted-foreground mb-2"
                     >
                       Nachricht *
                     </label>
                     <Textarea
                       id="message"
                       name="message"
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
+                      disabled
                       placeholder="Wie können wir Ihnen helfen?"
                       className="w-full min-h-[120px]"
                     />
@@ -226,9 +186,9 @@ export default function Contact() {
                     variant="hero"
                     size="lg"
                     className="w-full"
-                    disabled={isSubmitting}
+                    disabled
                   >
-                    {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
+                    Formular derzeit nicht verfügbar
                   </Button>
                 </div>
               </form>
@@ -289,7 +249,6 @@ export default function Contact() {
                       <ExternalLink className="w-8 h-8 text-primary" />
                     </div>
                     <p className="text-muted-foreground mb-4">
-                      Kalender wird hier eingebettet
                     </p>
                     <Button
                       variant="hero"
