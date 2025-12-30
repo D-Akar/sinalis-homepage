@@ -43,7 +43,7 @@ export function Navbar() {
             <img
               src={sinalisLogo}
               alt="Sinalis"
-              className="h-24 md:h-32 w-auto"
+              className="h-24 md:h-28 w-auto"
             />
           </Link>
 

@@ -4,15 +4,15 @@ import { useRef } from "react";
 
 const backers = [
   { name: "Wayra", description: "Telefónica Open Innovation" },
-  { name: "UnternehmerTUM", description: "Europe's Leading Entrepreneurship Center" },
-  { name: "TUM Venture Labs", description: "Healthcare Innovation" },
+  { name: "UnternehmerTUM", description: "Europas führendes Entrepreneurship Center" },
+  { name: "TUM Venture Labs", description: "Zentrum für digitale Innovationen im Gesundheitswesen" },
 ];
 
 const partners = [
   { name: "Twilio", description: "Telephonie-Infrastruktur" },
   { name: "ElevenLabs", description: "KI-Sprachsynthese" },
-  { name: "Google for Startups", description: "Cloud & AI Platform" },
-  { name: "Microsoft for Startups", description: "Enterprise Cloud" },
+  { name: "Google für Startups", description: "Cloud & AI Platform" },
+  { name: "Microsoft für Startups", description: "Enterprise Cloud" },
 ];
 
 export function BackersSection() {
