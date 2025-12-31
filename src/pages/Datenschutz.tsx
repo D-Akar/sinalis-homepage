@@ -10,7 +10,7 @@ export default function Datenschutz() {
           <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8">
             Datenschutzerklärung
           </h1>
-          
+
           <div className="space-y-8 text-muted-foreground">
             <section>
               <p className="leading-relaxed mb-4">
@@ -30,7 +30,7 @@ export default function Datenschutz() {
                 Achim Aziz<br />
                 Feldkirchener Strasse 10<br />
                 81929 München<br />
-                E-Mail-Adresse: info@buffle.eu
+                E-Mail-Adresse: info@sinalis.de
               </p>
             </section>
 

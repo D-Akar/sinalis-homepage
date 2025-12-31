@@ -29,7 +29,7 @@ export default function Impressum() {
                 Kontakt
               </h2>
               <p className="leading-relaxed">
-                E-Mail: info@buffle.eu
+                E-Mail: info@sinalis.de
               </p>
             </section>
 
